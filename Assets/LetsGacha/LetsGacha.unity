@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 252613224}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4254,7 +4254,7 @@ GameObject:
   - component: {fileID: 1785504154}
   - component: {fileID: 1785504153}
   m_Layer: 0
-  m_Name: GrabExample_Blue<why is this working but not the coin
+  m_Name: GrabExample_Blue
   m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5772,7 +5772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053218607499009364, guid: db1083f1d690bb94f8f40eca6411d68c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.63
+      value: -0.594
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

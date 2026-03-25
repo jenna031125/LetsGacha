@@ -3,6 +3,12 @@ using UnityEngine;
 public class TestGrab : MonoBehaviour, IGrabbable
 {
     VRControllerGrab currentController;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public void GrabStart(VRControllerGrab controller)
     {
         Debug.Log("Grab Start");
@@ -25,6 +31,7 @@ public class TestGrab : MonoBehaviour, IGrabbable
 
     void ParentObject()
     {
+        rb.useGravity = false;
         transform.parent = currentController.transform;
     }
 
@@ -34,5 +41,6 @@ public class TestGrab : MonoBehaviour, IGrabbable
         currentController.GrabGone(true, transform);
 
         currentController = null;
+        rb.useGravity = true;
     }
 }
