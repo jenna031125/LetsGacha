@@ -30,10 +30,12 @@ public class VRControllerInteraction : MonoBehaviour
             if (!interactionObjects.Contains(currentInteraction))
             {
                 currentInteraction = null;
+
                 if (interactionObjects.Count != 0)
                 {
                     currentInteraction = interactionObjects[0];
                     currentInteraction.InteractStart(this);
+                    currentInteraction.Interact();
                 }
             }
             else
@@ -47,6 +49,7 @@ public class VRControllerInteraction : MonoBehaviour
             {
                 currentInteraction = interactionObjects[0];
                 currentInteraction.InteractStart(this);
+                currentInteraction.Interact();
             }
         }
     }
