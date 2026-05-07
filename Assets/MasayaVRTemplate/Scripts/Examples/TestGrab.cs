@@ -9,13 +9,14 @@ public class TestGrab : MonoBehaviour, IGrabbable
     {
         rb = GetComponent<Rigidbody>();
     }
+
     public void GrabStart(VRControllerGrab controller)
     {
         Debug.Log("Grab Start");
 
-        if(currentController != null)
+        if (currentController != null)
         {
-            if(currentController != controller)
+            if (currentController != controller)
             {
                 currentController.GrabEnd();
                 currentController = controller;
@@ -32,15 +33,20 @@ public class TestGrab : MonoBehaviour, IGrabbable
     void ParentObject()
     {
         rb.useGravity = false;
-        transform.parent = currentController.transform;
+        rb.isKinematic = true;
+
+        transform.SetParent(currentController.transform, true);
     }
 
     public void GrabEnd()
     {
-        transform.parent = null;
+        transform.SetParent(null, true);
+
         currentController.GrabGone(true, transform);
 
         currentController = null;
+
+        rb.isKinematic = false;
         rb.useGravity = true;
     }
 }

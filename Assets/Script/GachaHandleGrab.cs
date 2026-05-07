@@ -131,7 +131,7 @@ public class GachaHandleGrab : MonoBehaviour, IGrabbable
             return;
         }
 
-        bool success = gachaMachine.TryDispense(currentController);
+        bool success = gachaMachine.TryDispense();
 
         if (success)
         {

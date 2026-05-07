@@ -8,46 +8,45 @@ public class GachaMachine : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private bool useSpawnPointRotation = true;
 
-    [Header("Dispense Settings")]
+    [Header("Coin State")]
     [SerializeField] private bool requireCoin = true;
+    [SerializeField] private bool coinInserted = false;
 
     private bool hasDispensedThisTurn = false;
 
-    public bool TryDispense(VRControllerGrab handleControllerGrab)
+    public bool CanInsertCoin()
+    {
+        return !coinInserted;
+    }
+
+    public void InsertCoin()
+    {
+        coinInserted = true;
+        hasDispensedThisTurn = false;
+
+        Debug.Log("[GachaMachine] Coin inserted.");
+    }
+
+    public bool TryDispense()
     {
         if (hasDispensedThisTurn)
         {
-            Debug.Log("[GachaMachine] Dispense already completed for this handle turn.");
+            Debug.Log("[GachaMachine] Dispense already completed for this turn.");
             return false;
         }
 
-        if (handleControllerGrab == null)
+        if (requireCoin && !coinInserted)
         {
-            Debug.LogWarning("[GachaMachine] Handle controller grab reference is null.");
+            Debug.Log("[GachaMachine] Cannot dispense. No coin inserted.");
             return false;
-        }
-
-        VRController handleController = handleControllerGrab.GetComponent<VRController>();
-
-        if (handleController == null)
-        {
-            Debug.LogWarning("[GachaMachine] VRController was not found on the handle controller.");
-            return false;
-        }
-
-        if (requireCoin)
-        {
-            bool coinConsumed = TryConsumeCoinFromControllers(handleController);
-
-            if (!coinConsumed)
-            {
-                Debug.Log("[GachaMachine] No coin was found in either controller.");
-                return false;
-            }
         }
 
         SpawnRandomItem();
+
+        coinInserted = false;
         hasDispensedThisTurn = true;
+
+        Debug.Log("[GachaMachine] Dispense completed.");
 
         return true;
     }
@@ -55,51 +54,6 @@ public class GachaMachine : MonoBehaviour
     public void ResetDispenseState()
     {
         hasDispensedThisTurn = false;
-        // Debug.Log("[GachaMachine] Dispense state has been reset.");
-    }
-
-    private bool TryConsumeCoinFromControllers(VRController baseController)
-    {
-        if (TryConsumeCoinFromController(baseController))
-            return true;
-
-        if (baseController.otherController != null)
-        {
-            if (TryConsumeCoinFromController(baseController.otherController))
-                return true;
-        }
-
-        return false;
-    }
-
-    private bool TryConsumeCoinFromController(VRController controller)
-    {
-        if (controller == null || controller.grab == null)
-            return false;
-
-        IGrabbable heldItem = controller.grab.currentHeld;
-
-        if (heldItem == null)
-            return false;
-
-        MonoBehaviour heldObject = heldItem as MonoBehaviour;
-
-        if (heldObject == null)
-            return false;
-
-        GachaCoin coin = heldObject.GetComponent<GachaCoin>();
-
-        if (coin == null)
-            return false;
-
-        GameObject coinObject = heldObject.gameObject;
-
-        controller.grab.GrabGone(false, null);
-        Destroy(coinObject);
-
-        Debug.Log("[GachaMachine] Coin consumed from controller: " + controller.GetHand());
-
-        return true;
     }
 
     private void SpawnRandomItem()
