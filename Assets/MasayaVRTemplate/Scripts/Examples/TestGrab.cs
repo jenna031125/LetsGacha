@@ -5,6 +5,8 @@ public class TestGrab : MonoBehaviour, IGrabbable
     VRControllerGrab currentController;
     Rigidbody rb;
 
+    public bool IsGrabbed => currentController != null;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,7 +36,6 @@ public class TestGrab : MonoBehaviour, IGrabbable
     {
         rb.useGravity = false;
         rb.isKinematic = true;
-
         transform.SetParent(currentController.transform, true);
     }
 
