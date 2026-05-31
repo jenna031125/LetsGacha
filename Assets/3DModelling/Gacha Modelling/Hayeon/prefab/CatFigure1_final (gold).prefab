@@ -206,6 +206,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96daf11a461b8bf42b9d10cd4365b2dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2123288597818897725}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96daf11a461b8bf42b9d10cd4365b2dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7543125591097911726}
   m_SourcePrefab: {fileID: 100100000, guid: 96daf11a461b8bf42b9d10cd4365b2dd, type: 3}
 --- !u!4 &4835044342240700408 stripped
 Transform:
@@ -407,3 +410,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7543125591097911726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5211324041351445826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d82aa53c0248c04595538027b8ebb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GachaItem

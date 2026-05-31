@@ -178,6 +178,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 243d61071793e974e9fb9f6e9be43aad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4733087748950552803}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 243d61071793e974e9fb9f6e9be43aad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6716125306274476241}
   m_SourcePrefab: {fileID: 100100000, guid: 243d61071793e974e9fb9f6e9be43aad, type: 3}
 --- !u!1 &3539241175060369043 stripped
 GameObject:
@@ -374,6 +377,18 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &6716125306274476241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539241175060369043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d82aa53c0248c04595538027b8ebb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GachaItem
 --- !u!4 &4203610748785038377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 243d61071793e974e9fb9f6e9be43aad, type: 3}
