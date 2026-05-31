@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-275439948190232301
+--- !u!114 &-2816786830278959131
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ Material:
     - _METALNESS: 0.1958042
     - _Metallic: 0
     - _Mode: 3
-    - _OPACITY: 0.181
+    - _OPACITY: 0.385
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
