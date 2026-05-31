@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3442057084995785947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653468291959509300}
+  - component: {fileID: 5913045281368789103}
+  m_Layer: 0
+  m_Name: BoxCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653468291959509300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442057084995785947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0020956988, y: 0.27611464, z: -0.009340569, w: 0.96107703}
+  m_LocalPosition: {x: -0.0008918635, y: 0.00001652107, z: 0.00028836625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9131438587939991397}
+  m_LocalEulerAnglesHint: {x: 0.526, y: 32.054, z: -0.962}
+--- !u!65 &5913045281368789103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442057084995785947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5017054, y: 1, z: 1.6336302}
+  m_Center: {x: 0.080387145, y: 0.00000007880923, z: -0.3168135}
 --- !u!1 &3478703144350282701
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +158,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23f52d15ff7721d4f8aafebf7d577b94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9110964539326940644}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23f52d15ff7721d4f8aafebf7d577b94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 653468291959509300}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23f52d15ff7721d4f8aafebf7d577b94, type: 3}
       insertIndex: -1
